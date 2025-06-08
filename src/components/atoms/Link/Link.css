@@ -1,0 +1,14 @@
+a {
+    text-decoration: none;
+}
+
+.nav-bar--link {
+    text-transform: uppercase;
+    color: var(--text-black);
+    letter-spacing: .2rem;
+    font-size: 1.5rem;
+}
+
+.nav-bar--link:hover {
+    color: var(--secondary-color);
+}
