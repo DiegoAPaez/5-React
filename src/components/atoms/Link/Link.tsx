@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import './Link.css';
 
 export default function Link({
     ref,

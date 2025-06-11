@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import './Logo.css';
 
 export default function Logo({
     source,
@@ -11,11 +10,9 @@ export default function Logo({
     type: string;
 }): JSX.Element {
     return (
-        <div>
-            <picture>
-                <source srcSet={source} type={type} />
-                <img src={source} alt={alt} />
-            </picture>
-        </div>
+        <picture>
+            <source srcSet={source} type={type} />
+            <img src={source} alt={alt} />
+        </picture>
     );
 }

@@ -1,5 +1,4 @@
-import './App.css';
-import Header from './components/organisms/Header.tsx';
+import Header from './components/organisms/Header/Header.tsx';
 
 function App() {
     return (
