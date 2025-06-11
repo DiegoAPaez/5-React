@@ -15,7 +15,7 @@ export default function Header() {
                 <Icon styles="md:hidden" path={burgerIcon} iconAlt="Burger Menu" />
                 <Icon styles="md:hidden" path={closeIcon} iconAlt="Close Menu" />
 
-                <NavBar styles="hidden md:grid md:grid-cols-4 gap-10 justify-items-center items-center text-(--bg-grey) md:text-(--text-black) uppercase font-medium tracking-widest bg-(--color-semi-transparent-bg) md:bg-transparent">
+                <NavBar styles="hidden md:grid md:grid-cols-4 gap-10 justify-items-center items-center text-(--bg-gray) md:text-(--text-black) uppercase font-medium tracking-widest bg-(--color-semi-transparent-bg) md:bg-transparent">
                     <hr className="w-[80%] md:hidden opacity-30" />
                     <Link
                         ref="#features"
