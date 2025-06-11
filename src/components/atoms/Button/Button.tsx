@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import './Button.css';
 
 export default function Button({
     styles,

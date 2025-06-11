@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import './Icon.css';
 
 export default function Icon({
     styles,

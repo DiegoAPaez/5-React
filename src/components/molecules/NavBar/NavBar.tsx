@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import './NavBar.css';
 
 export default function NavBar({
     children,
