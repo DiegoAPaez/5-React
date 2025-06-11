@@ -10,7 +10,7 @@ import closeIcon from '../../../assets/images/icon-close.svg';
 export default function Header() {
     return (
         <header className="max-w-[1280px] mx-auto my-5 py-10 text-gray-700">
-            <div className="max-w-[1100px] w-[80%] md:w-full mx-auto md:mx-0 flex flex-row justify-between items-center">
+            <div className="max-w-[1200px] w-[80%] md:w-full mx-auto flex flex-row justify-between items-center">
                 <Logo source={bookmarkLogo} alt="Bookmark" type="image/svg+xml" />
                 <Icon styles="md:hidden" path={burgerIcon} iconAlt="Burger Menu" />
                 <Icon styles="md:hidden" path={closeIcon} iconAlt="Close Menu" />

@@ -9,8 +9,8 @@
     --bg-grey: #f7f7f7;
     --shadow: #9a9b9f83;
     --color-semi-transparent-bg: rgba(26, 48, 95, 0.93);
-
-
+    --animate-fill-red: invert(0.7) sepia(72%) saturate(983%) hue-rotate(319deg)
+    brightness(119%) contrast(97%);
 }
 
 :root {

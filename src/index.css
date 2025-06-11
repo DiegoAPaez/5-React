@@ -11,19 +11,18 @@
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
     --font-weight-medium: 500;
     --tracking-widest: 0.1em;
     --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --main-color-dark: #242946;
     --secondary-color: #FA5959;
     --text-black: #252b45;
     --bg-grey: #f7f7f7;
     --color-semi-transparent-bg: rgba(26, 48, 95, 0.93);
+    --animate-fill-red: invert(0.7) sepia(72%) saturate(983%) hue-rotate(319deg)
+    brightness(119%) contrast(97%);
   }
 }
 @layer base {
@@ -172,6 +171,9 @@
   }
 }
 @layer utilities {
+  .mx-0 {
+    margin-inline: calc(var(--spacing) * 0);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -180,6 +182,9 @@
   }
   .flex {
     display: flex;
+  }
+  .grid {
+    display: grid;
   }
   .hidden {
     display: none;
@@ -190,8 +195,14 @@
   .w-\[80\%\] {
     width: 80%;
   }
+  .w-full {
+    width: 100%;
+  }
   .max-w-\[1100px\] {
     max-width: 1100px;
+  }
+  .max-w-\[1200px\] {
+    max-width: 1200px;
   }
   .max-w-\[1280px\] {
     max-width: 1280px;
@@ -204,6 +215,12 @@
   }
   .resize {
     resize: both;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .flex-row {
     flex-direction: row;
@@ -219,6 +236,15 @@
   }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
+  }
+  .gap-15 {
+    gap: calc(var(--spacing) * 15);
+  }
+  .gap-20 {
+    gap: calc(var(--spacing) * 20);
+  }
+  .justify-self-start {
+    justify-self: flex-start;
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
@@ -237,6 +263,9 @@
   .bg-\(--color-semi-transparent-bg\) {
     background-color: var(--color-semi-transparent-bg);
   }
+  .bg-\(--main-color-dark\) {
+    background-color: var(--main-color-dark);
+  }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
@@ -245,6 +274,9 @@
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
+  }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
@@ -286,9 +318,28 @@
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .hover\:cursor-pointer {
+    &:hover {
+      @media (hover: hover) {
+        cursor: pointer;
+      }
+    }
+  }
+  .hover\:filter-\(--animate-fill-red\) {
+    &:hover {
+      @media (hover: hover) {
+        filter: var(--animate-fill-red);
+      }
+    }
+  }
   .md\:mx-0 {
     @media (width >= 48rem) {
       margin-inline: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:mx-auto {
+    @media (width >= 48rem) {
+      margin-inline: auto;
     }
   }
   .md\:my-0 {
@@ -311,9 +362,29 @@
       width: 100%;
     }
   }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .md\:grid-cols-4 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:gap-5 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 5);
+    }
+  }
+  .md\:gap-20 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:justify-self-end {
+    @media (width >= 48rem) {
+      justify-self: flex-end;
     }
   }
   .md\:border-transparent {
