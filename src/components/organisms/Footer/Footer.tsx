@@ -8,7 +8,7 @@ import Icon from '../../atoms/Icon/Icon.tsx';
 
 export default function Footer() {
     return (
-        <footer className="footer mx-auto bg-(--main-color-dark) text-(--bg-grey) w-full py-5">
+        <footer className="footer mx-auto bg-(--main-color-dark) text-(--bg-gray) w-full py-5">
             <div className="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-20 md:gap-5 py-10 justify-self-start items-center">
                 <NavBar styles="grid grid-cols-1 md:grid-cols-4 gap-15 md:gap-20 justify-items-center items-center">
                     <Logo source={bookmarkWhiteIcon} alt="Bookmark" type="image/svg+xml" />
