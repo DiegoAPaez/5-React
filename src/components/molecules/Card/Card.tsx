@@ -13,11 +13,14 @@ export default function Card({
     iconAlt: string;
 }) {
     return (
-        <div>
-            <Icon styles={} path={iconPath} iconAlt={iconAlt} />
+        <div className="shadow-lg flex flex-col justify-center items-center py-10 rounded-3xl">
+            <Icon styles="my-15" path={iconPath} iconAlt={iconAlt} />
             <h4>{title}</h4>
             <p>Minimum version {description}</p>
-            <Button styles={} content="Add & Install Extension" />
+            <Button
+                styles="font-bold py-5 px-15 border-2 border-transparent rounded-lg bg-(--main-color) text-(--bg-gray) hover:bg-white hover:text-(--main-color) hover:border-(--main-color) cursor-pointer"
+                content="Add & Install Extension"
+            />
         </div>
     );
 }
