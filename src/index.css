@@ -204,20 +204,14 @@
   .my-5 {
     margin-block: calc(var(--spacing) * 5);
   }
+  .my-10 {
+    margin-block: calc(var(--spacing) * 10);
+  }
   .my-15 {
     margin-block: calc(var(--spacing) * 15);
   }
   .my-30 {
     margin-block: calc(var(--spacing) * 30);
-  }
-  .mt-0 {
-    margin-top: calc(var(--spacing) * 0);
-  }
-  .mt-15 {
-    margin-top: calc(var(--spacing) * 15);
-  }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
   }
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
@@ -264,6 +258,9 @@
   .w-\[90\%\] {
     width: 90%;
   }
+  .w-\[95\%\] {
+    width: 95%;
+  }
   .w-full {
     width: 100%;
   }
@@ -275,6 +272,9 @@
   }
   .border-collapse {
     border-collapse: collapse;
+  }
+  .rotate-180 {
+    rotate: 180deg;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -300,6 +300,9 @@
   .flex-row {
     flex-direction: row;
   }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
   .content-center {
     align-content: center;
   }
@@ -311,6 +314,9 @@
   }
   .justify-center {
     justify-content: center;
+  }
+  .justify-start {
+    justify-content: flex-start;
   }
   .justify-items-center {
     justify-items: center;
@@ -446,6 +452,12 @@
   .text-\(--color-text-grey\) {
     color: var(--color-text-grey);
   }
+  .text-\(--main-color\) {
+    color: var(--main-color);
+  }
+  .text-\(--secondary-color\) {
+    color: var(--secondary-color);
+  }
   .text-\(--text-gray\) {
     color: var(--text-gray);
   }
@@ -463,6 +475,9 @@
   }
   .underline {
     text-decoration-line: underline;
+  }
+  .opacity-20 {
+    opacity: 20%;
   }
   .opacity-25 {
     opacity: 25%;
@@ -484,6 +499,9 @@
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .filter-\(--animate-fill-red\) {
+    filter: var(--animate-fill-red);
   }
   .before\:absolute {
     &::before {
@@ -674,6 +692,16 @@
       width: 40%;
     }
   }
+  .md\:w-\[45\%\] {
+    @media (width >= 48rem) {
+      width: 45%;
+    }
+  }
+  .md\:w-\[60\%\] {
+    @media (width >= 48rem) {
+      width: 60%;
+    }
+  }
   .md\:w-\[80\%\] {
     @media (width >= 48rem) {
       width: 80%;
@@ -717,11 +745,6 @@
   .md\:gap-5 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 5);
-    }
-  }
-  .md\:gap-15 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 15);
     }
   }
   .md\:gap-20 {
