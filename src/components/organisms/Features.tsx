@@ -23,9 +23,8 @@ export default function Features() {
                 <menu className="flex flex-col md:grid md:grid-cols-3 w-[80%] gap-6 md:justify-items-center mb-30 md:mb-20">
                     <hr className="md:hidden opacity-25" />
                     {Object.keys(FEATURES).map(key => (
-                        <div>
+                        <div key={FEATURES[key].title}>
                             <Tab
-                                key={FEATURES[key].title}
                                 content={FEATURES[key].title}
                                 onSelect={() => {
                                     handleSelectTab(FEATURES[key].title);
@@ -36,32 +35,33 @@ export default function Features() {
                         </div>
                     ))}
                 </menu>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-15 justify-items-center items-center">
-                    {Object.keys(FEATURES).map(key => (
-                        <>
-                            <div
-                                key={FEATURES[key].title}
-                                className={`w-[80%] md:w-full justify-items-center relative before:absolute before:-inset-1 before:-z-1 before:block before:bg-(--main-color) before:top-[25%] before:left-[-20%] before:h-[95%] before:w-[100%] before:rounded-r-[20rem] 
+
+                {Object.keys(FEATURES).map(key => (
+                    <div
+                        key={FEATURES[key].title}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-15 justify-items-center items-center"
+                    >
+                        <div
+                            className={`w-[80%] md:w-full justify-items-center relative before:absolute before:-inset-1 before:-z-1 before:block before:bg-(--main-color) before:top-[25%] before:left-[-20%] before:h-[95%] before:w-[100%] before:rounded-r-[20rem] 
                             ${selected === FEATURES[key].title ? 'block' : 'hidden'}`}
-                            >
-                                <img src={FEATURES[key].image} alt={FEATURES[key].title} />
-                            </div>
-                            <div
-                                className={`grid row-auto gap-10 justify-items-center md:justify-items-start mt-30 md:mt-0
+                        >
+                            <img src={FEATURES[key].image} alt={FEATURES[key].title} />
+                        </div>
+                        <div
+                            className={`grid row-auto gap-10 justify-items-center md:justify-items-start mt-30 md:mt-0
                                 ${selected === FEATURES[key].title ? 'grid' : 'hidden'}`}
-                            >
-                                <h3 className="text-6xl font-bold">{FEATURES[key].subtitle}</h3>
-                                <p className="text-4xl leading-15 w-[75%] text-(--text-grey)">
-                                    {FEATURES[key].description}
-                                </p>
-                                <Button
-                                    styles="shadow bg-(--main-color) text-white rounded-lg py-6 px-10 font-bold hover:cursor-pointer"
-                                    content="More info"
-                                />
-                            </div>
-                        </>
-                    ))}
-                </div>
+                        >
+                            <h3 className="text-6xl font-bold">{FEATURES[key].subtitle}</h3>
+                            <p className="text-4xl leading-15 w-[75%] text-(--text-grey)">
+                                {FEATURES[key].description}
+                            </p>
+                            <Button
+                                styles="shadow bg-(--main-color) text-white rounded-lg py-6 px-10 font-bold md:block hidden hover:cursor-pointer"
+                                content="More info"
+                            />
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     );
