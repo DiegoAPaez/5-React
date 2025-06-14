@@ -3,6 +3,7 @@ import Footer from './components/organisms/Footer/Footer.tsx';
 import Hero from './components/organisms/Hero/Hero.tsx';
 import Features from './components/organisms/Features.tsx';
 import Downloads from './components/organisms/Downloads/Downloads.tsx';
+import Faqs from './components/organisms/Faqs/Faqs.tsx';
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <Hero />
             <Features />
             <Downloads />
+            <Faqs />
             <Footer />
         </>
     );
