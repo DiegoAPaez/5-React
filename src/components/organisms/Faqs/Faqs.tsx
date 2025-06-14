@@ -25,19 +25,17 @@ export default function Faqs() {
             </div>
             <div className="w-[80%] md:w-[45%] mx-auto">
                 {FAQS.map(faq => (
-                    <>
-                        <div key={faq.question}>
-                            <hr className="opacity-20" />
-                            <Faq
-                                onSelect={() => {
-                                    handleSelectFaq(faq.question);
-                                }}
-                                selected={selectedFaq === faq.question}
-                                question={faq.question}
-                                answer={faq.answer}
-                            />
-                        </div>
-                    </>
+                    <div key={faq.question}>
+                        <hr className="opacity-20" />
+                        <Faq
+                            onSelect={() => {
+                                handleSelectFaq(faq.question);
+                            }}
+                            selected={selectedFaq === faq.question}
+                            question={faq.question}
+                            answer={faq.answer}
+                        />
+                    </div>
                 ))}
             </div>
         </section>
