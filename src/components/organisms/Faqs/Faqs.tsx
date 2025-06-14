@@ -1,6 +1,7 @@
 import { FAQS } from '../../../data/data.ts';
 import Faq from '../../molecules/Faq/Faq.tsx';
 import { useState } from 'react';
+import Button from '../../atoms/Button/Button.tsx';
 
 export default function Faqs() {
     const [selectedFaq, setSelectedFaq] = useState<string>();
@@ -37,6 +38,12 @@ export default function Faqs() {
                         />
                     </div>
                 ))}
+            </div>
+            <div className="text-center mt-20 mb-30">
+                <Button
+                    styles="shadow bg-(--main-color) text-white rounded-lg py-6 px-10 font-bold hover:cursor-pointer"
+                    content="More info"
+                />
             </div>
         </section>
     );
