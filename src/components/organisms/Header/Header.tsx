@@ -4,18 +4,51 @@ import NavBar from '../../molecules/NavBar/NavBar.tsx';
 import Logo from '../../atoms/Logo/Logo.tsx';
 import Icon from '../../atoms/Icon/Icon.tsx';
 import bookmarkLogo from '../../../assets/images/logo-bookmark.svg';
+import bookmarkWhiteLogo from '../../../assets/images/logo-bookmark-white.svg';
 import burgerIcon from '../../../assets/images/icon-hamburger.svg';
 import closeIcon from '../../../assets/images/icon-close.svg';
+import { useState } from 'react';
 
 export default function Header() {
+    const [burgerOpen, setBurgerOpen] = useState(true);
+    const [menuIcon, setMenuIcon] = useState(burgerIcon);
+    const [imageAlt, setImageAlt] = useState('Burger Menu');
+    const [logo, setLogo] = useState(bookmarkLogo);
+    const [navBarStyles, setNavBarStyles] = useState('hidden');
+
+    function handleBurgerClick() {
+        setBurgerOpen(!burgerOpen);
+        setMenuIcon(burgerOpen ? closeIcon : burgerIcon);
+        setImageAlt(burgerOpen ? 'Close Menu' : 'Burger Menu');
+        setLogo(burgerOpen ? bookmarkWhiteLogo : bookmarkLogo);
+        setNavBarStyles(
+            burgerOpen
+                ? 'w-full h-full top-0 left-0 fixed flex flex-col justify-center gap-10 z-10'
+                : 'hidden',
+        );
+        console.log(burgerOpen);
+    }
+
     return (
         <header className="max-w-[1280px] mx-auto my-5 py-10 text-gray-700">
-            <div className="max-w-[1200px] w-[80%] md:w-full mx-auto flex flex-row justify-between items-center">
-                <Logo source={bookmarkLogo} alt="Bookmark" type="image/svg+xml" />
-                <Icon styles="md:hidden" path={burgerIcon} iconAlt="Burger Menu" />
-                <Icon styles="md:hidden" path={closeIcon} iconAlt="Close Menu" />
+            <div
+                className={`max-w-[1200px] w-[80%] md:w-full mx-auto flex flex-row justify-between items-center ${
+                    burgerOpen ? 'relative' : ''
+                }`}
+            >
+                <Logo styles="z-11" source={logo} alt="Bookmark" type="image/svg+xml" />
+                <Icon
+                    onClick={() => {
+                        handleBurgerClick();
+                    }}
+                    styles="md:hidden z-11"
+                    path={menuIcon}
+                    iconAlt={imageAlt}
+                />
 
-                <NavBar styles="hidden md:grid md:grid-cols-4 gap-10 justify-items-center items-center text-(--bg-gray) md:text-(--text-black) uppercase font-medium tracking-widest bg-(--color-semi-transparent-bg) md:bg-transparent">
+                <NavBar
+                    styles={`${navBarStyles} md:grid md:grid-cols-4 gap-10 justify-items-center items-center text-(--bg-gray) md:text-(--text-black) uppercase font-medium tracking-widest bg-(--color-semi-transparent-bg) md:bg-transparent`}
+                >
                     <hr className="w-[80%] md:hidden opacity-30" />
                     <Link
                         ref="#features"
