@@ -1,7 +1,7 @@
-import { FEATURES } from '../../data/data.ts';
-import Tab from '../atoms/Tab/Tab.tsx';
+import { FEATURES } from '../../../data/data.ts';
+import Tab from '../../atoms/Tab/Tab.tsx';
 import { useState } from 'react';
-import Button from '../atoms/Button/Button.tsx';
+import Button from '../../atoms/Button/Button.tsx';
 
 export default function Features() {
     const [selected, setSelected] = useState<string>(FEATURES.Booking.title);
