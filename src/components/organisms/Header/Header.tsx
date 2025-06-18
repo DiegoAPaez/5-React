@@ -10,30 +10,31 @@ import closeIcon from '../../../assets/images/icon-close.svg';
 import { useState } from 'react';
 
 export default function Header() {
-    const [burgerOpen, setBurgerOpen] = useState(true);
+    const [burgerOpen, setBurgerOpen] = useState(false);
     const [menuIcon, setMenuIcon] = useState(burgerIcon);
     const [imageAlt, setImageAlt] = useState('Burger Menu');
     const [logo, setLogo] = useState(bookmarkLogo);
     const [navBarStyles, setNavBarStyles] = useState('hidden');
+    const [containerPosition, setContainerPosition] = useState('');
 
     function handleBurgerClick() {
-        setBurgerOpen(!burgerOpen);
-        setMenuIcon(burgerOpen ? closeIcon : burgerIcon);
-        setImageAlt(burgerOpen ? 'Close Menu' : 'Burger Menu');
-        setLogo(burgerOpen ? bookmarkWhiteLogo : bookmarkLogo);
-        setNavBarStyles(
+        setBurgerOpen(open => !open);
+        setMenuIcon(() => (burgerOpen ? closeIcon : burgerIcon));
+        setImageAlt(() => (burgerOpen ? 'Close Menu' : 'Burger Menu'));
+        setLogo(() => (burgerOpen ? bookmarkWhiteLogo : bookmarkLogo));
+        setNavBarStyles(() =>
             burgerOpen
                 ? 'w-full h-full top-0 left-0 fixed flex flex-col justify-center gap-10 z-10'
                 : 'hidden',
         );
-        console.log(burgerOpen);
+        setContainerPosition(() => (burgerOpen ? 'relative' : ''));
     }
 
     return (
         <header className="max-w-[1280px] mx-auto my-5 py-10 text-gray-700">
             <div
                 className={`max-w-[1200px] w-[80%] md:w-full mx-auto flex flex-row justify-between items-center ${
-                    burgerOpen ? 'relative' : ''
+                    containerPosition
                 }`}
             >
                 <Logo styles="z-11" source={logo} alt="Bookmark" type="image/svg+xml" />
