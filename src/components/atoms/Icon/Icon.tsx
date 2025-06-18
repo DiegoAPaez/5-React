@@ -6,7 +6,7 @@ export default function Icon({
     iconAlt,
     onClick,
 }: {
-    styles: string;
+    styles?: string;
     path: string;
     iconAlt: string;
     onClick?: () => void;
